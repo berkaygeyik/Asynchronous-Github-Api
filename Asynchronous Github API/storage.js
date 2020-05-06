@@ -1,7 +1,7 @@
 class Storage {
 
     static getSearchedUsersFromStorage(){
-        // Tüm kullanıcıları al
+        // Take all users
 
         let users;
 
@@ -16,7 +16,7 @@ class Storage {
     }
 
     static addSearchedUserToStorage(username){
-        // Kullanıcı ekle
+        // add a user
         let users = this.getSearchedUsersFromStorage();
 
         if(users.indexOf(username) === -1){
@@ -27,7 +27,7 @@ class Storage {
     }
 
     static clearAllSearchedUsersFromStorage(){
-        // Tüm kullanıcıları sil
+        // clear all users
 
         localStorage.removeItem("searched");
         

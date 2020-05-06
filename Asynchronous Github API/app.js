@@ -1,4 +1,4 @@
-//elementleri seçme
+//choosing elements
 
 const githubForm = document.getElementById("github-form");
 const nameImput = document.getElementById("githubname");
@@ -21,14 +21,14 @@ function getData(e){
     let userName = nameImput.value.trim();
 
     if (userName === ""){
-        alert("Lütfen geçerli bir kullanıcı adı giriniz...");
+        alert("Please enter a valid username...");
     }
     else {
         github.getGithubData(userName)
         .then(response => {
             if (response.user.message === "Not Found"){
-                //Hata
-                ui.showError("Kullanıcı bulunamadı...");
+                //errior
+                ui.showError("User not found...");
             }
             else {
 
@@ -42,14 +42,14 @@ function getData(e){
     }
 
     
-    ui.clearInput();//input temizleme
+    ui.clearInput();
     e.preventDefault();
 }
 
 function clearAllSearched(){
     
-    //Tüm arananları temizle
-    if (confirm("Emin misiniz?")){
+    //Clear all searched
+    if (confirm("Are you sure?")){
         Storage.clearAllSearchedUsersFromStorage();
         ui.clearAllSearchedUsersFromUI();
     }
@@ -57,7 +57,7 @@ function clearAllSearched(){
 }
 
 function getAllSearched(){
-    //Arananları Storage'dan al ve UI'ye ekle
+    //Get searched users and add to UI
 
     let users = Storage.getSearchedUsersFromStorage();
 

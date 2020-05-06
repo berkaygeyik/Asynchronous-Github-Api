@@ -11,7 +11,6 @@ class Github {
         const userData = await responseUser.json();
         const repoData = await responseRepo.json();
 
-
         return {
             user: userData,
             repo: repoData
